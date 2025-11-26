@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <!-- Google tag (gtag.js) -->
+    
+    <script class="editorScript">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-FMKP1N6MX3");
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Add your name to the title-->
+    <title>Portfolio</title>
+    <style>
+      /* Portfolio Template by Scybud
+  Author: Abdulroqib Oladipo
+  Description: Beginner-friendly personal portfolio template
+  License: Free to use and modify with credit to Scybud
+  */
+
+      /*COLOR PALETTE*/
+      /*
+  Background: #0e1117
+  Accent: #00bcd4
+  Text: #f5f5f5
+  Highlight: #66e3f3
+  Modify these to personalize your color theme.
+*/
+
+      /* GENERAL STYLING */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* COLOR VARIABLES */
+      :root {
+        --bg: #0e1117;
+        --text: #f5f5f5;
+        --header-bg: #111827;
+        --h1-color: #00bcd4;
+        --h2-color: #89cff0;
+        --nav-link: #00e1ff;
+        --nav-link-hover: #66e3f3;
+        --h3-color: #6eacda;
+        --h3-hover: #09e2ff;
+        --hero-bg: linear-gradient(145deg, #141a24, #0e1117);
+        --project-btn-bg: #007e8e;
+        --project-btn-text: #00102d;
+        --cards-bg: #0b1a2a;
+        --skills-bg: white;
+        --skills-text: black;
+        --project-bg: #00102d;
+        --project-shadow: #00274b;
+        --project-hover-shadow: #025c68;
+        --footer-bg: #111827;
+        --footer-text: #b0b3b8;
+        --footer-link: #00bcd4;
+        --menu-bar: beige;
+                --cancel-bar: #e5e7eb;
+      }
+
+      /* LIGHT MODE VARIABLES */
+      body.light-mode {
+        --bg: #f3f4f6;
+        --text: #111827;
+        --header-bg: #ffffff;
+        --h1-color: #007e8e;
+        --h2-color: #005b7f;
+        --nav-link: #00e1ff;
+        --nav-link-hover: #00a0af;
+        --h3-color: #007bbf;
+        --h3-hover: #00cbe6;
+        --hero-bg: linear-gradient(145deg, #ffffff, #e5e7eb);
+        --project-btn-bg: #007e8e;
+        --project-btn-text: #ffffff;
+        --cards-bg: #ffffff;
+        --skills-bg: #e5e7eb;
+        --skills-text: #111827;
+        --project-bg: #ffffff;
+        --project-shadow: rgba(0, 0, 0, 0.1);
+        --project-hover-shadow: rgba(0, 0, 0, 0.3);
+        --footer-bg: #e5e7eb;
+        --footer-text: #374151;
+        --footer-link: #007bbf;
+        --menu-bar: #374151;
+        --cancel-bar: #e5e7eb;
+      }
+
+      /* HTML STYLE */
+      html,
+      body {
+        scroll-behavior: smooth;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      /* BODY */
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        max-width: 100vw;
+      }
+
+      /* HEADER */
+      header {
+        border-radius: 20px;
+        min-width: 95vw;
+        margin: 0 auto;
+        max-width: 100%;
+        flex-wrap: wrap;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        background: var(--header-bg);
+        min-height: 80px;
+        height: auto;
+        padding: 0 10px;
+        justify-content: space-between;
+        top: 0;
+        position: sticky;
+        z-index: 10;
+        margin-top: 10px;
+      }
+
+      /* MAIN */
+      main {
+        margin: 10px auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+      }
+
+      /* HEADER H1 ELEMENT STYLE */
+      header h1 {
+        color: var(--h1-color);
+      }
+
+      /* H2 ELEMENT STYLE */
+      h2 {
+        text-align: center;
+        color: var(--h2-color);
+      }
+
+      /* HEADER NAVIGATION STYLE */
+      nav {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      /* HEADER NAVIGATION LINKS STYLE */
+      nav a {
+        font-size: 0.95rem;
+        margin-left: 20px;
+        color: var(--nav-link);
+        text-decoration: none;
+      }
+
+      /* HEADER NAVIGATION LINKS STYLE WHEN HOVERED */
+      nav a:hover {
+        color: var(--nav-link-hover);
+      }
+
+      /* ALL NAVIGATION LINKS */
+      h3 {
+        text-decoration: none;
+        color: var(--h3-color);
+      }
+
+      /* ALL NAVIGATION LINKS STYLE WHEN HOVERED */
+      h3:hover {
+        color: var(--h3-hover);
+      }
+
+      /* HERO SECTION STYLE */
+      #hero {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 30px;
+        background: var(--hero-bg);
+        text-align: center;
+        padding: 20px;
+        margin: 5px 0;
+        border-radius: 10px;
+        min-height: 300px;
+      }
+
+      /* NAVIGATION LINK TO PROJECT SECTION STYLE IN HERO */
+      #projectbtn {
+        background-color: var(--project-btn-bg);
+        border-radius: 50px;
+        padding: 5px;
+        margin: 10px;
+        color: var(--project-btn-text);
+        text-decoration: none;
+        transition: all 0.3s ease-in;
+      }
+
+      /* NAVIGATION LINKS TO PROJECT SECTION STYLE WHEN HOVERED IN HERO */
+      #projectbtn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        text-decoration: none;
+      }
+
+      /* ALL SECTION WITH class="card" STYLE */
+      .cards {
+        background-color: var(--cards-bg);
+        width: 90vw;
+        padding: 10px;
+        border-radius: 10px;
+        display: none;
+      }
+
+      /* LIST OF ALL SKILLS CONTAINER STYLE */
+      #skills-list {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      /* LIST OF ALL SKILLS STYLE */
+      #skills-list div {
+        text-align: center;
+        background-color: var(--skills-bg);
+        color: var(--skills-text);
+        border-radius: 10px;
+        min-width: fit-content;
+        width: 80px;
+      }
+
+      /* LIST OF ALL SKILLS STYLE ON HOVER */
+      #skills-list div:hover {
+        transform: scale(1.05);
+        transition: transform 0.2s ease-in-out;
+      }
+
+      /* ALL SECTION STYLE */
+      section {
+        margin-top: 10px;
+      }
+
+      /* CONTAINER OF ALL PROJECT */
+      #projects-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      /* LINKS IN CONTAINER OF ALL PROJECTS */
+      #projects-container a {
+        font-weight: 900;
+        font-size: large;
+      }
+
+      /* INDIVIDUAL PROJECT STYLE */
+      .project {
+        width: 280px;
+        background-color: var(--project-bg);
+        border-radius: 12px;
+        padding: 15px;
+        transition: all 0.3s ease-in-out;
+        text-align: left;
+        box-shadow: 0 0 15px var(--project-shadow);
+      }
+
+      /* INDIVIDUAL PROJECT STYLE ON HOVER */
+      .project:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 15px var(--project-hover-shadow);
+      }
+
+      /* LINKS IN CONTACT CONTAINER */
+      #contact p span:nth-child(2) {
+        color: var(--nav-link-hover);
+      }
+
+      /* CONTACT SPAN ELEMENT */
+      span {
+        font-weight: 600;
+      }
+
+      /* INDIVIDUAL PROJECT STYLE ON SMALLER SCREEN FOR CONSISTENT DESIGN */
+      @media (max-width: 600px) {
+        .project {
+          width: 95%;
+          background-color: var(--project-bg);
+          border-radius: 10px;
+          padding: 5px 10px;
+          transition: all 0.5s ease-in;
+        }
+      }
+
+      /* FOOTER STYLING */
+      footer [contenteditable="true"] {
+        cursor: text;
+        border-bottom: 1px dashed transparent;
+        transition: 0.2s;
+      }
+
+      footer [contenteditable="true"]:hover,
+      footer [contenteditable="true"]:focus {
+        border-bottom: 1px dashed #94a3b8; /* soft slate line to hint it's editable */
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 0.9rem;
+        background: var(--footer-bg);
+        color: var(--footer-text);
+        max-width: 100%;
+        margin-top: auto;
+      }
+
+      footer a {
+        color: var(--footer-link);
+        text-decoration: none;
+      }
+
+      /* Make the sidebar invisible by default */
+      #sidebar {
+        display: none;
+      }
+
+      /* RESPONSIVE DESIGN FOR SMALLER SCREEN WIDTH */
+      @media (max-width: 800px) {
+        /* make the name and menu icon stay beside each other */
+        header {
+          display: flex;
+          justify-content: flex-start;
+          gap: 10px;
+          margin: 0;
+        }
+
+        /* Make the normal navigation links invisible on smaller screens */
+        #normal-navLinks {
+          display: none;
+        }
+
+        /* STYLE NAV LINKS IN SIDEBAR */
+        #sidebar nav {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          margin: 30px 0 0 30px;
+        }
+
+        /* STYLE SIDEBAR */
+        #sidebar {
+          backdrop-filter: blur(90px) brightness(20%);
+          width: 50vw;
+          height: 100vh;
+          top: 0;
+          left: 0;
+          position: fixed;
+          z-index: 1000;
+          display: none;
+        }
+
+        /* ENSURE SIDEBAR SHOWS ON MENU ICON CLICK */
+        #sidebar.show {
+          display: block;
+        }
+
+        /* STYLE SPAN ELEMENT TO LOOK LIKE MENU ICON */
+        #menuIcon span,
+        #cancelIcon span {
+          background-color: var(--menu-bar);
+          width: 30px;
+          height: 5px;
+          margin: 0 3px 5px 5px;
+          border-radius: 20px;
+        }
+
+        /* STYLE MENU ICON ITSELF */
+        #menuIcon,
+        #cancelIcon {
+          display: flex;
+          flex-direction: column;
+          cursor: pointer;
+          margin-top: 10px;
+        }
+         #cancelIcon span {
+
+           background-color: var(--cancel-bar);
+         }
+
+        /* STYLE CANCEL ICON INSIDE SIDEBAR */
+        #cancelIcon {
+          margin: 20px;
+        }
+
+        /* MAKE SPAN FOR CANCEL ICON LOOK LIKE AN X SHAPE */
+        #middlebar {
+          display: none;
+        }
+
+        #topbar {
+          transform: rotate(45deg) translate(7px);
+        }
+
+        #bottombar {
+          transform: rotate(-45deg) translate(7px);
+        }
+      }
+      /* Smooth transition for light/dark mode */
+      body,
+      header,
+      footer,
+      .project,
+      .cards,
+      #hero,
+      #skills-list div {
+        transition: all 0.9s ease;
+      }
+
+      /* You are free to use this template but please give credit to Scybud and Abdulroqib Oladipo */
+    </style>
+    <!--EDITOR STYLE-->
+    
+  </head>
+  <body class="">
+    
+    <div id="action">
+      
+      
+      
+    </div>
+    <hr>
+    <!--SIDEBAR FOR SMALLER SCREENS-->
+    <div id="sidebar" class="">
+      <!--Sidebar icon-->
+      <div id="cancelIcon" class="cancelIcon" onclick="togglesidebar()">
+        <span id="topbar"></span>
+        <span id="middlebar"></span>
+        <span id="bottombar"></span>
+      </div>
+      <!--Sidebar links-->
+      <nav>
+        <!--Use onclick to make sidebar close when link is clicked-->
+        <a class="aboutLink" onclick="togglesidebar()" href="#about">About</a>
+        <a class="skillsLink" onclick="togglesidebar()" href="#skills">Skills</a>
+        <a class="projectsLink" onclick="togglesidebar()" href="#projects">Projects</a>
+        <a class="contactLink" onclick="togglesidebar()" href="#contact">Contact</a>
+      </nav>
+    </div>
+    <!--HEADER-->
+    <header>
+      <!--Sidebar icon-->
+      <div id="menuIcon" role="button" aria-label="Toggle navigation" tabindex="0" onclick="togglesidebar()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!--Add your name to the header-->
+      <h1>Scyflix</h1>
+      <!--NAVIGATION-->
+      <nav id="normal-navLinks">
+        <a class="aboutLink" href="#about">About</a>
+        <a class="skillsLink" href="#skills">Skills</a>
+        <a class="projectsLink" href="#projects">Projects</a>
+        <a class="contactLink" href="#contact">Contact</a>
+      </nav>
+    </header>
+    <!--MAIN SECTION-->
+    <main>
+      <!--HERO SECTION-->
+      <section id="hero">
+        <!--ADD your greetings-->
+        <h2>Hi, I´m Scyflix</h2>
+        <!--Add a short introduction about yourself-->
+        <p>
+          Beginner Front-End Developer | Passionate about tech
+        </p>
+        <!--NAVIGATION button to project section-->
+        <a id="projectbtn" class="projectsLink" href="#projects">View my projects</a>
+      </section>
+      <!--ABOUT SECTION-->
+      <section id="about" class="cards" style="display: block;">
+        <h2>About Me</h2>
+        <!--Replace the <p> element with detailed description about yourself-->
+        <p>
+          I am a beginner Front-End Developer currently learning HTML, CSS and
+          JavaScript. I create clean and responsive websites. I build projects
+          to learn and grow.
+        </p>
+      </section>
+      <!--SKILLS SECTION-->
+      <section id="skills" class="cards" style="display: none;">
+        <h2>My skills</h2>
+        <!--Replace the <div> element with a list of your skills-->
+        <div id="skills-list">
+          <div>HTML</div>
+          <div>CSS</div>
+          <div>JavaScript</div>
+          <div>React</div>
+          <div>Responsive Design</div>
+          <div>
+            Words Document(Basic)
+          </div>
+        </div>
+      </section>
+      <!--PROJECTS SECTION-->
+      <section id="projects" class="cards" style="display: none;">
+        <h2>My Projects</h2>
+        <!--Projects container-->
+        <div id="projects-container">
+          <!--Projects list as with the class="projects" as cards-->
+          <!--Replace the <a> element href="" with the links and name to your projects(optional) or remove them-->
+          <!--Add a short description of what each prject does in the <p> element under each project-->
+          <div class="project">
+            <h3>TryTasty</h3>
+            <p>Recipe website for easy and fun snack recipes. User auth, user profile and more.</p>
+          </div>
+          <div class="project">
+            <h3>Playbud</h3>
+            <p>A game portal for simple icebreaker and boredom-killer games.</p>
+          </div>
+          <div class="project">
+            <h3>Resbuild</h3>
+            <p><span style="font-weight: 400;">A resume builder website that helps to create simple resume(first project i made with JavaScript).</span></p>
+          </div>
+          <div class="project">
+            <h3>Thai's Vogue</h3>
+            <p><span style="font-weight: 400;">A fashion site showcasing a Nigerian based fashion designer`s work and styles(created with Google Sites).</span></p>
+          </div>
+          <div class="project">
+            <h3>Salvation Nsx</h3>
+            <p><span style="font-weight: 400;">A comic artist website and portfolio showcasing his skills, passion and work.</span></p>
+          </div>
+          <div class="project">
+            <h3>RushSite</h3>
+            <p>
+              A portfolio builder web App that offers templates to build responsive and user friendly websites</p>
+          </div>
+        </div>
+      </section>
+      <!--CONTACT SECTION-->
+      <section id="contact" class="cards" style="display: none;">
+        <h2>Contact</h2>
+        <p>
+          Let's collaborate and build something fun together
+        </p>
+
+        <p>
+          <span>Email:</span>
+          <span>scyflix5855@gmail.com</span>
+        </p>
+        <p>
+          <span>GitHub:</span>
+          <span><a href="https://github.com/scyflix">scyflix (Scybud)</a></span>
+        </p>
+        <p>
+          <span>Twitter/X:</span>
+          <span><a href="https://x.com/Scyflix5855">(8) Scyflix (@Scyflix5855) / X</a></span>
+        </p>
+        <p>
+          <span>LinkedIn:</span>
+          <span><a href="https://www.linkedin.com/in/abdulroqib-oladipo-a85197253/">Abdulroqib Oladipo | LinkedIn</a></span>
+        </p>
+      </section>
+    </main>
+    <footer>
+      <p title="Click to edit footer text">
+        © Scyflix — All Rights Reserved
+      </p>
+
+      <p class="powered">Built with <a href="../index.html">RushSite⚡</a></p>
+    </footer>
+
+    <script>
+
+      //make onclick function work with js
+      const sidebar = document.getElementById("sidebar");
+
+      function togglesidebar() {
+        sidebar.classList.toggle("show");
+      }
+      //select all sections from html
+      const about = document.getElementById("about");
+      const skills = document.getElementById("skills");
+      const projects = document.getElementById("projects");
+      const contact = document.getElementById("contact");
+      //show sections if link is clicked
+      //About Section
+      const aboutLink = document.querySelectorAll(".aboutLink");
+      aboutLink.forEach((link) => {
+        link.addEventListener("click", () => {
+          about.style.display = "block";
+          skills.style.display = "none";
+          projects.style.display = "none";
+          contact.style.display = "none";
+        });
+      });
+
+      //Skills Section
+      const skillsLink = document.querySelectorAll(".skillsLink");
+      skillsLink.forEach((link) => {
+        link.addEventListener("click", () => {
+          skills.style.display = "block";
+          about.style.display = "none";
+          projects.style.display = "none";
+          contact.style.display = "none";
+        });
+      });
+
+      //Projects Section
+      const projectsLink = document.querySelectorAll(".projectsLink");
+      projectsLink.forEach((link) => {
+        link.addEventListener("click", () => {
+          projects.style.display = "block";
+          about.style.display = "none";
+          skills.style.display = "none";
+          contact.style.display = "none";
+        });
+      });
+
+      //Contact Section
+      const contactLink = document.querySelectorAll(".contactLink");
+      contactLink.forEach((link) => {
+        link.addEventListener("click", () => {
+          contact.style.display = "block";
+          projects.style.display = "none";
+          about.style.display = "none";
+          skills.style.display = "none";
+        });
+      });
+    </script>
+    <script src="export.js">
+      //AFTER TEMPLATE IS EXPORTED, THIS SCRIPT IS USELESS
+    </script>
+        <script src="editor.js">
+          //AFTER TEMPLATE IS EXPORTED, THIS SCRIPT IS USELESS
+        </script>
+  
+
+
+</body></html>
